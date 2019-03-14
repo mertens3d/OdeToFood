@@ -42,3 +42,4 @@ packages/
 TestResults/
 /originals/materials/*.zip
 /originals/materials/unzipped*
+/.vs/OdeToFood/v15/Server/sqlite3/*
