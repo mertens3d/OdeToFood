@@ -172,15 +172,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903141900231_InitialCreate.cs" />
-    <Compile Include="Migrations\201903141900231_InitialCreate.Designer.cs">
-      <DependentUpon>201903141900231_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201903181933514_Initial.cs" />
+    <Compile Include="Migrations\201903181933514_Initial.Designer.cs">
+      <DependentUpon>201903181933514_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutModel.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\OdeToFoodDb.cs" />
     <Compile Include="Models\Restaurant.cs" />
+    <Compile Include="Models\RestaurantListViewModel.cs" />
     <Compile Include="Models\RestaurantReview.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -309,8 +310,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903141900231_InitialCreate.resx">
-      <DependentUpon>201903141900231_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903181933514_Initial.resx">
+      <DependentUpon>201903181933514_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

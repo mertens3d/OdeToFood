@@ -18,16 +18,23 @@ namespace OdeToFood.Migrations
 
         protected override void Seed(OdeToFood.Models.OdeToFoodDb context)
         {
+            //context.Database.CreateIfNotExists();
             context.Restaurants.AddOrUpdate(r => r.Name,
-                new Restaurant() { Name = "Sabatino's", City = "Balitimore", Country = "USA", Reviews = new List<RestaurantReview>()
+                new Restaurant()
                 {
-                    new RestaurantReview()
+                    Name = "Sabatino's",
+                    City = "Balitimore",
+                    Country = "USA",
+                    Reviews = new List<RestaurantReview>()
                     {
-                        Rating = 5,
-                        Body = "please work",
-                        ReviewerName = "Frank"
+                        new RestaurantReview()
+                        {
+                            Rating = 5,
+                            Body = "please work",
+                            ReviewerName = "Frank"
+                        }
                     }
-                }},
+                },
                 new Restaurant() { Name = "Great Lake", City = "Chicago", Country = "USA" },
                 new Restaurant()
                 {
@@ -37,7 +44,7 @@ namespace OdeToFood.Migrations
                     Reviews =
                         new List<RestaurantReview>()
                         {
-                            new RestaurantReview(){ Rating = 9, Body = "Great Food!", ReviewerName = "Bob"}
+                            new RestaurantReview(){ Rating = 9, Body = "Great Food!", ReviewerName = "Fred"}
                         }
 
                 });
