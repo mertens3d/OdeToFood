@@ -9,9 +9,10 @@ namespace OdeToFood.Models
     {
 
         public int Id { get; set; }
-        public ICollection<RestaurantReview> Reviews { get; set; }
+        public int Rating { get; set; }
         public string Body { get; set; }
         public int RestaurantId { get; set; }
+        public string ReviewerName { get; set; }
 
     }
 }
