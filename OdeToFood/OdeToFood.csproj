@@ -260,6 +260,7 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\otf.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -311,6 +312,7 @@
     <Content Include="Views\Reviews\_Reviews.cshtml" />
     <Content Include="Views\Reviews\Create.cshtml" />
     <Content Include="Views\Reviews\Edit.cshtml" />
+    <Content Include="Views\Home\_Restaurants.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
