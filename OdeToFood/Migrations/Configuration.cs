@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Web.Security;
 using OdeToFood.Models;
+using WebMatrix.WebData;
 
 namespace OdeToFood.Migrations
 {
@@ -54,7 +56,31 @@ namespace OdeToFood.Migrations
                 context.Restaurants.AddOrUpdate(r => r.Name, 
                     new Restaurant(){Name = i.ToString(), City = "Nowhere", Country = "USA"});
             }
-                
+
+            SeedMembership();
+        }
+
+        private void SeedMembership()
+        {
+            WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "userName", autoCreateTables: true);
+
+            var roles = (SimpleRoleProvider) Roles.Provider;
+            var membership = (SimpleMembershipProvider) Membership.Provider;
+
+            if (!roles.RoleExists("Admin"))
+            {
+                roles.CreateRole("Admin");
+            }
+
+            if (membership.GetUser("sallen", false) == null)
+            {
+                membership.CreateUserAndAccount("sallen", "imalittleteapot");
+            }
+
+            if (!roles.GetRolesForUser("sallen").Contains("Admin"))
+            {
+                roles.AddUsersToRoles(new []{"sallen"}, new [] {"admin"});
+            }
         }
     }
 }
