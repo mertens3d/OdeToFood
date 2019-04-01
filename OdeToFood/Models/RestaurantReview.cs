@@ -34,10 +34,13 @@ namespace OdeToFood.Models
     {
 
         public int Id { get; set; }
+
         [Range(1,10)]
         [Required]
         public int Rating { get; set; }
-        [Required]
+
+        
+        //[Required(ErrorMessageResourceType = typeof(OdeToFood.Views.Home.Resources), ErrorMessageResourceName = "Greeting")]
         [StringLength(1024)]
         public string Body { get; set; }
         public int RestaurantId { get; set; }

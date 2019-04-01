@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 using PagedList;
 
 namespace OdeToFood.Controllers
@@ -28,7 +29,18 @@ namespace OdeToFood.Controllers
 
             return Json(model, JsonRequestBehavior.AllowGet);
         }
+
+        //[ChildActionOnly]
+        //[OutputCache(Duration = 60)]
+        //public ActionResult SayHello()
+        //{
+        //    return Content("Hello");
+        //}
+
+
         //[AllowAnonymous]
+        //[OutputCache(Duration = 360, VaryByHeader = "X-Requested-With", Location = OutputCacheLocation.Server)]
+        [OutputCache(CacheProfile = "Long", VaryByHeader = "X-Requested-With;Accept-Language", Location = OutputCacheLocation.Server)]
         public ActionResult Index(string searchTerm = null, int page= 1)
         {
 
