@@ -6,38 +6,40 @@
 
 <form method="get" action="@Url.Action("Index")"
       data-otf-ajax="true" data-otf-target="#restaurantList">
-        <input type="search"name="searchTerm" data-otf-autocomplete="@Url.Action("Autocomplete")"/>
-        <input type="submit" value="Search By Name" />
-    </form>
+    <input type="search" name="searchTerm" data-otf-autocomplete="@Url.Action("Autocomplete")" />
+    <input type="submit" value="Search By Name" />
+</form>
 
 
-@{
-    var amount = 10.0m;
-    var someDate = new DateTime(2002, 7,9);
-}
+@*@ViewBag.MailServer*@
 
-<div>
-   @OdeToFood.Views.Home.Resources.Greeting
-</div>
-<div>
-    @amount.ToString("c")
-</div>
-<div>
-    @someDate.ToShortDateString()
-</div>
+@*@{
+        var amount = 10.0m;
+        var someDate = new DateTime(2002, 7,9);
+    }
+
+    <div>
+       @OdeToFood.Views.Home.Resources.Greeting
+    </div>
+    <div>
+        @amount.ToString("c")
+    </div>
+    <div>
+        @someDate.ToShortDateString()
+    </div>*@
 
 @*@Html.Action("SayHello");*@
 
 @*@using (Ajax.BeginForm(
-    new AjaxOptions()
+        new AjaxOptions()
+        {
+            HttpMethod = "get",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "restaurantList"
+        }))
     {
-        HttpMethod = "get",
-        InsertionMode = InsertionMode.Replace,
-        UpdateTargetId = "restaurantList"
-    }))
-{
-    <input type="search" name="searchTerm" />
-    <input type="submit" value="Search By Name" />
-}*@
+        <input type="search" name="searchTerm" />
+        <input type="submit" value="Search By Name" />
+    }*@
 
 @Html.Partial("_Restaurants", Model)

@@ -1,10 +1,12 @@
 ﻿using OdeToFood.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
+using OdeToFood.Migrations;
 using PagedList;
 
 namespace OdeToFood.Controllers
@@ -65,6 +67,7 @@ namespace OdeToFood.Controllers
                 })
                 .ToPagedList(page, 10);
 
+            ViewBag.MailServer = ConfigurationManager.AppSettings["MailServer"];
 
             if (Request.IsAjaxRequest())
             {
